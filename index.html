@@ -13,12 +13,12 @@
 
 <body>
 
-    <h1 style="text-align: center; margin-top: 100px;">Calc React</h1>
+    <h1 style="text-align: center; margin-top: 50px;">Calc React</h1>
 
     <center>
-        <form>
+        <form name="form">
             <div class="form-group">
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <input type="text" class="form-control textview" name="textview" id="exampleFormControlInput1">
             </div>
         </form>
     </center>
@@ -26,61 +26,82 @@
     <div class="container-sm">
         <div class="row">
             <div class="col">
-                <button>7</button>
+                <button value="7" onclick="insert(7)">7</button>
             </div>
             <div class="col">
-                <button>8</button>
+                <button value="8" onclick="insert(8)">8</button>
             </div>
             <div class="col">
-                <button>9</button>
+                <button value="9" onclick="insert(9)">9</button>
             </div>
             <div class="col">
-                <button>/</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button>4</button>
-            </div>
-            <div class="col">
-                <button>5</button>
-            </div>
-            <div class="col">
-                <button>6</button>
-            </div>
-            <div class="col">
-                <button>x</button>
+                <button value="/" onclick="insert('/')">/</button>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <button>1</button>
+                <button value="4" onclick="insert(4)">4</button>
             </div>
             <div class="col">
-                <button>2</button>
+                <button value="5" onclick="insert(5)">5</button>
             </div>
             <div class="col">
-                <button>3</button>
+                <button value="6" onclick="insert(6)">6</button>
             </div>
             <div class="col">
-                <button>-</button>
+                <button value="x" onclick="insert('*')">x</button>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <button>0</button>
+                <button value="1" onclick="insert(1)">1</button>
             </div>
             <div class="col">
-                <button>.</button>
+                <button value="2" onclick="insert(2)">2</button>
             </div>
             <div class="col">
-                <button>=</button>
+                <button value="7" onclick="insert(3)">3</button>
             </div>
             <div class="col">
-                <button>+</button>
+                <button value="-" onclick="insert('-')">-</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button value="0" onclick="insert(0)">0</button>
+            </div>
+            <div class="col">
+                <button value="." onclick="insert('.')">.</button>
+            </div>
+            <div class="col">
+                <button value="c" onclick="clean()">C</button>
+            </div>
+            <div class="col">
+                <button value="+" onclick="insert('+')">+</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button value="=" onclick="equal()">=</button>
             </div>
         </div>
     </div>
+
+    <script>
+
+        function insert(num){
+            document.form.textview.value = document.form.textview.value + num
+        }
+
+        function equal(){
+            document.form.textview.value = eval(document.form.textview.value)
+        }
+
+        function clean(){
+            document.form.textview.value = ""
+        }
+        
+    </script>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
